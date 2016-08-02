@@ -1,0 +1,1 @@
+json.array! @visiters, partial: 'visiters/visiter', as: :visiter

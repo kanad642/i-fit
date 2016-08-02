@@ -1,0 +1,1 @@
+json.partial! "visiters/visiter", visiter: @visiter
