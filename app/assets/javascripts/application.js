@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree ./plugins
+//= require jquery-ui
 //= require modernizr.custom
+//= require responsiveCarousel
+//= require_tree ./plugins
 //= require custom
 //= require_tree .
