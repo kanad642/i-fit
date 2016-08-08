@@ -4,7 +4,8 @@ class WelcomesController < ApplicationController
   # GET /welcomes
   # GET /welcomes.json
   def index
-    @welcomes = Welcome.all
+     # @welcome = Welcome.all
+     @welcome = Welcome.new
   end
 
   # GET /welcomes/1
@@ -14,6 +15,7 @@ class WelcomesController < ApplicationController
 
   # GET /welcomes/new
   def new
+   
     @welcome = Welcome.new
   end
 
@@ -24,15 +26,19 @@ class WelcomesController < ApplicationController
   # POST /welcomes
   # POST /welcomes.json
   def create
+    #binding.pry
     @welcome = Welcome.new(welcome_params)
-
+     
     respond_to do |format|
       if @welcome.save
-        format.html { redirect_to @welcome, notice: 'Welcome was successfully created.' }
-        format.json { render :show, status: :created, location: @welcome }
+        ContactUs.confirmation_contact_us(@welcome).deliver_now
+        ContactUs.contact_us_mail_for_support(@welcome).deliver_now
+         @welcome.destroy
+        format.html { redirect_to root_path, notice: 'Welcome was successfully created.' }
+        format.js {}
       else
         format.html { render :new }
-        format.json { render json: @welcome.errors, status: :unprocessable_entity }
+        format.js { }
       end
     end
   end
@@ -69,6 +75,8 @@ class WelcomesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def welcome_params
-      params.fetch(:welcome, {})
+      # params.fetch(:welcome, {})
+
+       params.require(:welcome).permit(:name, :phone, :address, :message, :email)
     end
 end

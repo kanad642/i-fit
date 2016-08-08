@@ -17,4 +17,11 @@
 //= require responsiveCarousel
 //= require_tree ./plugins
 //= require custom
+//= require social-share-button
 //= require_tree .
+
+
+ $('body').on('click', '.btn-default', function(e) {
+    $('.btn-default').addClass("black-text");
+
+	});

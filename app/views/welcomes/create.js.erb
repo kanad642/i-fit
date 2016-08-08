@@ -1,0 +1,14 @@
+
+$('#myModal').modal('hide');
+ $.notify({
+          message: "Your request has been submitted successfully !!",
+          animate: {
+                    enter: 'animated lightSpeedIn',
+                    exit: 'animated lightSpeedOut'}
+              },
+          {
+            type: 'success'
+          });
+
+$('.contact_section').html('<%= j render 'contact_section' %>');
+$('.valid_title_field').val('');
