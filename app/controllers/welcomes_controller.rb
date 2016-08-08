@@ -4,12 +4,8 @@ class WelcomesController < ApplicationController
   # GET /welcomes
   # GET /welcomes.json
   def index
-    begin 
      # @welcome = Welcome.all
      @welcome = Welcome.new
-   rescue
-    puts "error "
-   end
   end
 
   # GET /welcomes/1
