@@ -6,7 +6,7 @@ class WelcomesController < ApplicationController
   def index
     puts 'dfhgkjdfhgkjdfhg'
      # @welcome = Welcome.all
-     @welcome = Welcome.new
+     # @welcome = Welcome.new
   end
 
   # GET /welcomes/1
