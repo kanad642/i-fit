@@ -466,6 +466,21 @@
    <script type="text/javascript">
 
 
-   
+    $(document).ready(function() {
+        $('.removel').removeClass("yello-text");
+        $('#myModal').modal('show');
 
+        $('#myModal').on('hide.bs.modal', function () {
+          $('.removel').addClass("yello-text");
+         });
+
+
+      $('body').on('click', '.btn-default', function(e) {
+         $('.btn-default').addClass("black-text");
+
+    });
+
+     });  
+
+    
    </script>
