@@ -26,3 +26,6 @@
     $('.btn-default').addClass("black-text");
 
 	});
+
+        // $('#myModal').modal('show');
+        // $('.removel').removeClass("yello-text");
